@@ -1,40 +1,62 @@
-import {revalidatePath} from "next/cache";
-// easy to use the wrong import here
-import {redirect} from "next/navigation";
-
+import Link from "next/link";
+import Image from "next/image";
 import pg from "pg";
-export default function posts() {
-  async function handleSubmit(formData) {
-    "use server";
-    console.log("running on the server after submit");
-    const db = new pg.Pool({
-      connectionString: process.env.DB_CONN,
-    });
+import("next").NextConfig;
 
-    const data = Object.fromEntries(formData);
-    const {name, country, class1, launchdate, img_url} = data;
-    await db.query(
-      `INSERT INTO ships (name, country, class1, launchdate, img_url) VALUES ($1, $2, $3, $4, $5)`,
-      [name, country, class1, launchdate]
-    );
+// images: {
+//   formats: ["image/avif", "image/webp"], remotePatterns;
+//   [
+//     {
+//       protocol: "https",
+//       hostname: "s3-eu-central-1.amazonaws.com",
+//       port: "",
+//       pathname: "/mycompany-data-bucket-dev/**",
+//     },
+//   ];
+// }
 
-    console.log(data);
+// /** @type {import('next').NextConfig} */
+// module.exports = {
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: "https",
+//         hostname: "assets.vercel.com",
+//         port: "",
+//         pathname: "/image/upload/**",
+//         search: "",
+//       },
+//     ],
+//   },
+// };
 
-    revalidatePath("/ships");
+export default async function Posts() {
+  const db = new pg.Pool({connectionString: process.env.DB_CONN});
 
-    redirect("/ships");
-  }
+  const data = await db.query(`SELECT * FROM ships`);
+  const ships = data.rows;
 
+  console.log(ships);
   return (
-    // the callback we give to action always get formData
-    <form className="border border-blue-400 grd grid-col" action={handleSubmit}>
-      <label htmlFor="title01">title</label>
-      <input name="name" placeholder="name" required id="title01" />
-      <input name="country" placeholder="country" required />
-      <input name="class1" placeholder="class" required />
-      <input type="date" name="launchdate" placeholder="launchdate" required />
-      <input name="img_url" placeholder="img_url" />
-      <button type="submit">submit</button>
-    </form>
+    <div>
+      <h2>This is the ships route!</h2>
+      <div style={{display: "flex", flexWrap: "wrap"}}>
+        {ships.map((ships) => (
+          <div key={ships.id}>
+            <Link href={`/ships/${ships.id}`}>
+              <p>{ships.name}</p>
+              <Image
+                height={500}
+                width={350}
+                alt={
+                  "https://c8.alamy.com/zooms/9/0004e263e757453daff9ac04948695b3/dnmtwt.jpg"
+                }
+                src={ships.img_url}
+              />
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
