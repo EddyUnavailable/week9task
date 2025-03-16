@@ -1,0 +1,48 @@
+.broken {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* z-index: 0; */
+    gap: 1.25rem;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: red;
+    border-width: 10px;
+    height: 250px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: 10px;
+    font-weight: 800;
+    color: rgb(255, 100, 0);
+    background-image: linear-gradient(to right,
+    rgba(255, 255, 255, 0) 5%,
+    rgba(255, 250, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 11%,
+    rgba(255, 250, 0, 1) 12%,
+    rgba(0, 0, 0, 1) 13%,
+    rgba(255, 255, 50, 1) 14%,
+    rgba(255, 250, 0, 1) 86%,
+    rgba(0, 0, 0, 1) 87%,
+    rgba(255, 250, 0, 1) 88%,
+    rgba(0, 0, 0, 1) 89%,
+    rgba(255, 250, 0, 1) 90%,
+    rgba(255, 255, 255, 0) 95%
+  );
+}
+.wrapper {
+    display: flex;
+    
+    border: red;
+    border-width: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+
+
+}

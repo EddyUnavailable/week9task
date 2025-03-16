@@ -27,7 +27,7 @@ export default async function Page() {
 
   // if in the database, show user data.
   return (
-    <div>
+    <div className="flex flex-col">
       <p>Hello, {userInfo.rows[0].username}</p>
     </div>
   );

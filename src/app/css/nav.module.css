@@ -1,0 +1,80 @@
+/* src/app/css/nav.module.css */
+.nav {
+    box-sizing: border-box;
+    width: 100vw;
+    align-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0px;
+    display: flex;
+    padding: 5px;
+    z-index: 0;
+    gap: 15px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 800;
+    color: rgb(200, 50, 0);
+    background-image: linear-gradient(to right,
+    rgba(255, 255, 255, 0) 5%,
+    rgba(255, 0, 0, 1) 11%,
+    rgb(255, 150, 0) 12%,
+    rgba(255, 250, 0, 1) 13%,
+    rgba(255, 255, 50, 1) 14%,
+    rgb(50, 200, 0) 30%,
+    rgb(50, 200, 0) 70%,
+    rgba(255, 255, 50, 1) 86%,
+    rgba(255, 250, 0, 1) 87%,
+    rgba(255, 0, 0, 1) 88%,
+    rgba(255, 0, 0, 1) 89%,
+    rgba(255, 255, 255, 0) 95%
+  );
+  }
+  /* a:hover {
+    background-color: yellow;
+    font-size: 18px;
+  } */
+
+.navButton {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  justify-content: center;
+ align-self: center;
+  align-items: center;
+  align-content: center;
+  border: outset;
+  color: grey;
+  border-radius: 25%;
+  background-color: rgba(255, 250, 0, 1);
+}
+
+.navButton:hover {
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  align-content: center;
+  border: inset;
+  color: rgba(255, 0, 0, 1);
+  border-radius: 25%;
+  background-color: rgba(255, 150, 0, 1);
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 100px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover {
+  visibility: visible;
+}

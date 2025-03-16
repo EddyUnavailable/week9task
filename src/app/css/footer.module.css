@@ -1,0 +1,28 @@
+/* src/app/css/footer.module.css */
+.footer {
+  width: 100vw;
+    box-sizing: border-box;
+    position: absolute;
+    align-content: center;
+    margin: 5px;
+    bottom: 0%;   
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    height: 40px;
+    color: blue;
+    background-image: linear-gradient(to right,
+    rgba(255, 255, 255, 0) 5%,
+    rgba(255, 0, 0, 1) 11%,
+    rgb(255, 150, 0) 12%,
+    rgba(255, 250, 0, 1) 13%,
+    rgba(255, 255, 50, 1) 14%,
+    rgb(50, 200, 0) 30%,
+    rgb(50, 200, 0) 70%,
+    rgba(255, 255, 50, 1) 86%,
+    rgba(255, 250, 0, 1) 87%,
+    rgba(255, 0, 0, 1) 88%,
+    rgba(255, 0, 0, 1) 89%,
+    rgba(255, 255, 255, 0) 95%
+  );
+  }

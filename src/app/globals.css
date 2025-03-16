@@ -2,13 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  max-width:100%;
+  margin: 0%;
+  padding: 0px;
+  border: 0px;
+  /* align-content: center;
+    justify-content: center;
+    justify-self: center;
+    justify-items: center;
+  text-align: justify; */
+  overflow: hide;
+  background: black;
+  }

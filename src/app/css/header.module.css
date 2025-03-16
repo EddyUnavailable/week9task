@@ -1,0 +1,32 @@
+/* src/app/css/header.module.css */
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 100vw;
+  height: 50px;
+  box-sizing: border-box;
+    align-content: center;
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 800;
+    color: blue;    
+    background-image: linear-gradient(to right,
+    rgba(255, 255, 255, 0) 5%,
+    rgba(255, 0, 0, 1) 11%,
+    rgb(255, 150, 0) 12%,
+    rgba(255, 250, 0, 1) 13%,
+    rgba(255, 255, 50, 1) 14%,
+    rgb(50, 200, 0) 30%,
+    rgb(50, 200, 0) 70%,
+    rgba(255, 255, 50, 1) 86%,
+    rgba(255, 250, 0, 1) 87%,
+    rgba(255, 0, 0, 1) 88%,
+    rgba(255, 0, 0, 1) 89%,
+    rgba(255, 255, 255, 0) 95%
+  );
+  }

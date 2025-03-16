@@ -8,7 +8,7 @@ export default async function Page({params}) {
   const db = connect();
 
   // check if the user id is in our database
-  const userInfo = await db.query(`SELECT * FROM user_account WHERE id = $1`, [
+  const userInfo = await db.query(`SELECT * FROM userprofile WHERE id = $1`, [
     id,
   ]);
 
