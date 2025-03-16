@@ -1,0 +1,39 @@
+/* src/app/css/rainbow.module.css */
+.rainbow {
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
+    justify-content: center;
+    background-image: linear-gradient(
+      45deg,
+      red 0%,
+      red 15%,
+      orange 20%,
+      yellow,
+      green,
+      blue,
+      indigo,
+      violet,
+      indigo,
+      blue,
+      green,
+      yellow,
+      orange,
+      red 80%,
+      red 100%
+    );
+    background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradiate 8s linear infinite;
+  }
+  
+  @keyframes animate-gradiate {
+    to {
+      background-position: 200%;
+    }
+  }

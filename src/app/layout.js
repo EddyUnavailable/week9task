@@ -8,6 +8,7 @@ import navStyles from "./css/nav.module.css";
 import Link from "next/link";
 import footerStyles from "./css/footer.module.css";
 import headerStyles from "./css/header.module.css";
+import rainbowTextStyles from "./css/rainbowText.module.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -77,7 +78,7 @@ export default function RootLayout({children}) {
              
             {children}  
           </main>
-          <footer className={footerStyles.footer}>Made by Eddy with unicorn poo and fading edge abuse</footer>
+          <footer className={footerStyles.footer}><p>Made by Eddy with</p> <p className={rainbowTextStyles.rainbow}>unicorn poo</p> <p className={footerStyles.fading}>and fading edge abuse</p></footer>
         </body>
       </html>
     </ClerkProvider>

@@ -1,5 +1,8 @@
 /* src/app/css/footer.module.css */
 .footer {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
   width: 100vw;
     box-sizing: border-box;
     position: absolute;
@@ -26,3 +29,20 @@
     rgba(255, 255, 255, 0) 95%
   );
   }
+
+
+  .fading {
+    background-clip: text;
+    color: transparent;
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right,
+    rgba(255, 255, 255, 0) 1%,
+    rgba(0, 0, 255, 1) 7%,
+   
+    /* rgb(0, 0, 255, 1) 65%, */
+    rgba(255, 255, 255, 0) 80%
+  );
+  }
+  
