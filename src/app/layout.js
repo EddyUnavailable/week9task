@@ -65,7 +65,7 @@ export default function RootLayout({children}) {
             <Image src="/profile.png" alt="" width={20} height={20} title="Profile" />
           </Link>
           <Link className={navStyles.navButton} href="/posts">
-            Posts
+          <Image src="/posts.png" alt="" width={20} height={20} title="Posts" />
           </Link>
           <Link className={navStyles.navButton} href="/posts/new">
             New
