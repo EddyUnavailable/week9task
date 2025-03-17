@@ -1,89 +1,58 @@
 // "use client";
 
-// import { useUser } from "@clerk/nextjs";
-// import { auth } from "@clerk/nextjs/server";
-// import Image from "next/image";
-// import { useState } from "react";
-// // import AddPostButton from "./AddPostButton";
-// // import { addPost } from "@/lib/actions";
+// import { useEffect, useState } from 'react';
+// import { useUser, withAuth } from '@clerk/nextjs';
+// import axios from 'axios';
 
-// const AddPost = () => {
-//   const { user, isLoaded } = useUser();
-//   const [desc, setDesc] = useState("");
-//   const [img, setImg] = useState<any>(null);
+// const MessageBoard = () => {
+//   const { user } = useUser();
+//   const [comments, setComments] = useState([]);
+//   const [newComment, setNewComment] = useState('');
 
-//   if (!isLoaded) {
-//     return "Loading...";
-//   }
+//   useEffect(() => {
+//     fetchComments();
+//   }, []);
+
+//   const fetchComments = async () => {
+//     const response = await axios.get('/api/comments');
+//     setComments(response.data);
+//   };
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     if (newComment.trim() === '') return;
+
+//     await axios.post('/api/comments', {
+//       userId: user.id,
+//       comment: newComment,
+//     });
+
+//     setNewComment('');
+//     fetchComments();
+//   };
 
 //   return (
-//     <div className="p-4 bg-white shadow-md rounded-lg flex gap-4 justify-between text-sm">
-//       {/* AVATAR */}
-//       <Image
-//         src={user?.imageUrl || "/noAvatar.png"}
-//         alt=""
-//         width={48}
-//         height={48}
-//         className="w-12 h-12 object-cover rounded-full"
-//       />
-//       {/* POST */}
-//       <div className="flex-1">
-//         {/* TEXT INPUT */}
-//         <form action={(formData)=>addPost(formData,img?.secure_url || "")} className="flex gap-4">
-//           <textarea
-//             placeholder="What's on your mind?"
-//             className="flex-1 bg-slate-100 rounded-lg p-2"
-//             name="desc"
-//             onChange={(e) => setDesc(e.target.value)}
-//           ></textarea>
-//           <div className="">
-//             <Image
-//               src="/emoji.png"
-//               alt=""
-//               width={20}
-//               height={20}
-//               className="w-5 h-5 cursor-pointer self-end"
-//             />
-//             <AddPostButton />
+//     <div>
+//       <h1>Message Board</h1>
+//       <form onSubmit={handleSubmit}>
+//         <textarea
+//           value={newComment}
+//           onChange={(e) => setNewComment(e.target.value)}
+//           placeholder="Write your comment..."
+//           required
+//         />
+//         <button type="submit">Post Comment</button>
+//       </form>
+//       <div>
+//         {comments.map((comment) => (
+//           <div key={comment.id}>
+//             <p>{comment.comment}</p>
+//             <small>{comment.userid} - {new Date(comment.time).toLocaleString()}</small>
 //           </div>
-//         </form>
-//         {/* POST OPTIONS */}
-//         <div className="flex items-center gap-4 mt-4 text-gray-400 flex-wrap">
-//           <CldUploadWidget
-//             uploadPreset="social"
-//             onSuccess={(result, { widget }) => {
-//               setImg(result.info);
-//               widget.close();
-//             }}
-//           >
-//             {({ open }) => {
-//               return (
-//                 <div
-//                   className="flex items-center gap-2 cursor-pointer"
-//                   onClick={() => open()}
-//                 >
-//                   <Image src="/addimage.png" alt="" width={20} height={20} />
-//                   Photo
-//                 </div>
-//               );
-//             }}
-//           </CldUploadWidget>
-//           <div className="flex items-center gap-2 cursor-pointer">
-//             <Image src="/addVideo.png" alt="" width={20} height={20} />
-//             Video
-//           </div>
-//           <div className="flex items-center gap-2 cursor-pointer">
-//             <Image src="/poll.png" alt="" width={20} height={20} />
-//             Poll
-//           </div>
-//           <div className="flex items-center gap-2 cursor-pointer">
-//             <Image src="/addevent.png" alt="" width={20} height={20} />
-//             Event
-//           </div>
-//         </div>
+//         ))}
 //       </div>
 //     </div>
 //   );
 // };
 
-// export default AddPost;
+// export default New();
